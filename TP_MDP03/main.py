@@ -21,6 +21,7 @@ def afficher_menu(): # On définit une fonction 'afficher_menu' sans paramètre.
     print("2 - Mot de passe avec configuration personnalisée.")
     print("3 - Phrase de passe avec configuration par défaut.")
     print("4 - Phrase de passe avec configuration personnalisée.")
+    print("5 - Phrase de passe avec configuration EFF")
     print("")
     print("0 - Quitter le menu du générateur.")
     print("")
@@ -46,6 +47,8 @@ def choix_generateur(choix_utilisateurice): # On définit une fonction 'choix_ge
         case 4:
             nb_words = int(input("Veuillez entrer un nombre de mots à générer : "))
             print(mdp.generer_passphrase(nb_words))
+        case 5:
+            print(mdp.generer_dice_passphrase())
         case 0:
             print("Vous quittez le programme. Au revoir :)")
         case _:

@@ -1,6 +1,6 @@
 import secrets # On importe les modules secrets et string.
 import string
-from eff_words import get_word_list
+from eff_words import get_word_list, get_word_dict
 
 LETTRES = string.ascii_letters # Définit toutes les lettres autorisées
 CHIFFRES = string.digits # Définit tous les chiffres autorisés
@@ -57,12 +57,12 @@ def generer_dice_passphrase(nb_words=6):
     words = get_word_dict()
     passphrase_words = []
     for _ in range(nb_words):
-        passphrase_words.append(secrets.choice(words))
-    passphrase_words = "-".join(passphrase_words)
-    return passphrase_words
+        des = tirer_les_des()
+        passphrase_words.append(words[des])
+    return "".join(passphrase_words)
 
 def tirer_les_des():
-    des = []
+    dice = []
     for _ in range(5):
-        des.append(secrets.randbelow(1))
-    return des
+        dice.append(str(secrets.randbelow(6) + 1))
+    return "".join(dice)
