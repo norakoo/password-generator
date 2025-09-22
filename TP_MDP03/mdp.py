@@ -52,3 +52,17 @@ def generer_passphrase(nb_words=6):
         passphrase_words.append(secrets.choice(words))
     passphrase_words = "-".join(passphrase_words)
     return passphrase_words
+
+def generer_dice_passphrase(nb_words=6):
+    words = get_word_dict()
+    passphrase_words = []
+    for _ in range(nb_words):
+        passphrase_words.append(secrets.choice(words))
+    passphrase_words = "-".join(passphrase_words)
+    return passphrase_words
+
+def tirer_les_des():
+    des = []
+    for _ in range(5):
+        des.append(secrets.randbelow(1))
+    return des
