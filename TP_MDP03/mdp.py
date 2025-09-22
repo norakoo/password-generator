@@ -53,6 +53,22 @@ def generer_passphrase(nb_words=6):
     passphrase_words = "-".join(passphrase_words)
     return passphrase_words
 
+"""
+Docstring de la fonction generer_dice_passphrase
+
+On initialise la variable 'words' à laquelle on affecte le dictionnaire 'get_word_dict()'
+
+On initialise une liste passphrase_words vide
+
+On boucle nb_words de fois :
+
+    On appelle la fonction tirer_les_des() qu'on affecte à la variable des
+    
+    On ajoute dans la lite passphrase_words les mots correspondant à la valeur 'XXXXX' du mot
+    
+On renvoie la passephrase en une chaîne de caractère entière
+"""
+
 def generer_dice_passphrase(nb_words=6):
     words = get_word_dict()
     passphrase_words = []
@@ -60,6 +76,16 @@ def generer_dice_passphrase(nb_words=6):
         des = tirer_les_des()
         passphrase_words.append(words[des])
     return "".join(passphrase_words)
+
+"""
+Docstring de la fonction tirer_les_des()
+
+On initialise une liste dice vide
+
+On boucle 5 fois la liste à laquelle on ajoute un chiffre entre 1 et 5
+
+On renvoie la liste de chiffre sous forme 'XXXXX'
+"""
 
 def tirer_les_des():
     dice = []
