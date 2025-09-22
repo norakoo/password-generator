@@ -42,9 +42,10 @@ def choix_generateur(choix_utilisateurice): # On définit une fonction 'choix_ge
             password_length = int(input("Veuillez entrer une longueur de mot de passe : ")) # On demande à l'utilisateur de choisir une longueur de mot de passe.
             print(mdp.generer_mdp(password_length)) # On renvoie son mot de passe en fonction de la longueur choisie.
         case 3:
-            print("Phrase de passe par défaut : Voici1phrasemdppardefaut!")
+            print(mdp.generer_passphrase())
         case 4:
-            print("Phrase de passe personnalisée : V0ic1unephr4s3mdpPERSO#!$")
+            nb_words = int(input("Veuillez entrer un nombre de mots à générer : "))
+            print(mdp.generer_passphrase(nb_words))
         case 0:
             print("Vous quittez le programme. Au revoir :)")
         case _:
